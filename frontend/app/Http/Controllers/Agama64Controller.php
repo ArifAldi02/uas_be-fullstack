@@ -38,8 +38,12 @@ class Agama64Controller extends Controller
 
     public function destroy($id)
     {
-        Http::delete('http://localhost:8000/api/agama64/' . $id);
+        $response = Http::delete('http://localhost:8000/api/agama64/' . $id);
 
-        return redirect('/agama64')->with('success', 'Delete success');
+        if ($response['success']) {
+            return redirect('/agama64')->with('success', 'Delete success');
+        }
+
+        return redirect('/agama64')->with('error', 'Religion is being used');
     }
 }

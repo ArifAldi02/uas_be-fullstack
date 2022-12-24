@@ -68,7 +68,7 @@ class Agama64Controller extends Controller
     {
         $agama = Agama::findOrFail($id);
 
-        if ($agama) {
+        if ($agama->detail_data == null) {
             $agama->delete();
             return new Res(true, 'Delete success', null);
         }
