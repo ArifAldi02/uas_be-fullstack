@@ -3,6 +3,16 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-6">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="card card-dark card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">

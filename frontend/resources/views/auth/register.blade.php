@@ -4,6 +4,16 @@
         <div class="login-logo">
             <a href="#"><b>V</b>3421064</a>
         </div>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="card">
             <div class="card-body login-card-body">
                 <form action="/register64" method="post" enctype="multipart/form-data">

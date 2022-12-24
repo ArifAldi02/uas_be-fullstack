@@ -39,10 +39,10 @@ class Auth64Controller extends Controller
             $request->file('foto')->move('img/', $request->file('foto')->getClientOriginalName());
             $login->foto = $request->file('foto')->getClientOriginalName();
             $login->save();
-            return redirect('/login64');
+            return redirect('/login64')->with('success', 'Register success');
         }
 
-        return redirect('/register64')->with('success', 'register success');
+        return redirect('/register64')->with('error', 'Register failed');
     }
 
     public function loginP(Request $request)
@@ -59,7 +59,7 @@ class Auth64Controller extends Controller
                 return redirect('/');
             }
             Auth::logout();
-            return redirect('/login64')->with('error', 'Belum di approve');
+            return redirect('/login64')->with('error', 'User has not been approved');
         }
         return redirect('/login64')->with('error', 'Email or password wrong');
     }

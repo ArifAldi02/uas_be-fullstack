@@ -12,7 +12,8 @@ class User64Controller extends Controller
     {
         $agama = Http::get('http://localhost:8000/api/agama64')['data'];
         return view('user.myprofile', [
-            'agamas' => $agama
+            'agamas' => $agama,
+            'page' => "My profile"
         ]);
     }
 
@@ -30,7 +31,7 @@ class User64Controller extends Controller
             'foto' => $foto_name
         ]);
 
-        return redirect('/myprofile64');
+        return redirect('/myprofile64')->with('success', 'Change success');
     }
 
     public function editpassword(Request $request, $id)
@@ -39,7 +40,7 @@ class User64Controller extends Controller
             'password' => $request->password
         ]);
 
-        return redirect('/myprofile64');
+        return redirect('/myprofile64')->with('success', 'Change success');
     }
 
     public function index()
@@ -65,12 +66,12 @@ class User64Controller extends Controller
     public function destroy($id)
     {
         Http::delete('http://localhost:8000/api/user64/' . $id);
-        return redirect('/user64');
+        return redirect('/user64')->with('success', 'Delete success');
     }
 
     public function update($id)
     {
         Http::put('http://localhost:8000/api/user64/' . $id);
-        return redirect('/user64');
+        return redirect('/user64')->with('success', 'Approve success');
     }
 }

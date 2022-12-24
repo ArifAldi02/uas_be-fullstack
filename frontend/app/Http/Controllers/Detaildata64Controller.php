@@ -26,7 +26,7 @@ class Detaildata64Controller extends Controller
             'foto_ktp' => $foto_ktp,
         ]);
 
-        return redirect('/myprofile64');
+        return redirect('/myprofile64')->with('success', 'Create success');
     }
 
     public function update(Request $request, $id)
@@ -46,6 +46,6 @@ class Detaildata64Controller extends Controller
             'foto_ktp' => $foto_ktp,
         ]);
 
-        return redirect('/myprofile64');
+        return redirect('/myprofile64')->with('success', 'Update success');
     }
 }

@@ -24,7 +24,7 @@ class Agama64Controller extends Controller
             'nama_agama' => $request->nama_agama,
         ]);
 
-        return redirect('/agama64')->with('status', 'error');
+        return redirect('/agama64')->with('success', 'Create success');
     }
 
     public function update(Request $request, $id)
@@ -33,13 +33,13 @@ class Agama64Controller extends Controller
             'nama_agama' => $request->nama_agama
         ]);
 
-        return redirect('/agama64');
+        return redirect('/agama64')->with('success', 'Update success');
     }
 
     public function destroy($id)
     {
         Http::delete('http://localhost:8000/api/agama64/' . $id);
 
-        return redirect('/agama64');
+        return redirect('/agama64')->with('success', 'Delete success');
     }
 }

@@ -3,6 +3,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="card">
                     <div class="card-header bg-dark">
                         <h3 class="card-title">User</h3>
@@ -12,7 +22,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Photo</th>
+                                    <th style="width: 60px" class="text-center">Photo</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th style="width: 150px" class="text-center">Action</th>
@@ -22,9 +32,8 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td><a href="#" data-toggle="modal"
-                                                data-target="#foto{{ $user['id'] }}">Show
-                                                photo</a></td>
+                                        <td class="text-center"><img src="/img/{{ $user['foto'] }}" alt="error"
+                                                style="width: 50px; height: 50px" class="rounded"></td>
                                         <td>{{ $user['name'] }}</td>
                                         <td>{{ $user['email'] }}</td>
                                         <td>
@@ -50,26 +59,4 @@
             </div>
         </div>
     </div>
-
-    @foreach ($users as $user)
-        <div class="modal fade" id="foto{{ $user['id'] }}">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark">
-                        <h4 class="modal-title">Foto ktp</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <img src="/img/{{ $user['foto'] }}" alt="error" style="width: 400px; height: 400px"
-                            class="rounded">
-                    </div>
-                    <div class="modal-footer bg-dark justify-content-right">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
 @endsection
