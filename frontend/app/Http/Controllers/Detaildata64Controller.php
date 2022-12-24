@@ -11,6 +11,15 @@ class Detaildata64Controller extends Controller
 {
     public function store(Request $request)
     {
+        $request->validate([
+            'id_agama' => 'required',
+            'alamat' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'umur' => 'required|numeric',
+            'foto_ktp' => 'required|image',
+        ]);
+
         if ($request->hasFile('foto_ktp')) {
             $request->file('foto_ktp')->move('img/', $request->file('foto_ktp')->getClientOriginalName());
             $foto_ktp = $request->file('foto_ktp')->getClientOriginalName();
@@ -31,6 +40,15 @@ class Detaildata64Controller extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'id_agama' => 'required',
+            'alamat' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'umur' => 'required|numeric',
+            'foto_ktp' => 'required|image',
+        ]);
+
         if ($request->hasFile('foto_ktp')) {
             $request->file('foto_ktp')->move('img/', $request->file('foto_ktp')->getClientOriginalName());
             $foto_ktp = $request->file('foto_ktp')->getClientOriginalName();

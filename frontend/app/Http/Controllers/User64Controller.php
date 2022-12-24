@@ -19,6 +19,10 @@ class User64Controller extends Controller
 
     public function editimage(Request $request, $id)
     {
+        $request->validate([
+            'foto' => 'required|image',
+        ]);
+
         $user = User::findOrFail($id);
         $user->foto = $request->foto;
 
@@ -36,6 +40,10 @@ class User64Controller extends Controller
 
     public function editpassword(Request $request, $id)
     {
+        $request->validate([
+            'password' => 'required|min:8'
+        ]);
+
         Http::put('http://localhost:8000/api/user64/update/password/' . $id, [
             'password' => $request->password
         ]);

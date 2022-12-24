@@ -26,6 +26,7 @@ class Auth64Controller extends Controller
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
+            'foto' => 'required|image',
         ]);
 
         $login = User::create([

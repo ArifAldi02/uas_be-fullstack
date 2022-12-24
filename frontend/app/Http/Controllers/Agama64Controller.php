@@ -19,6 +19,9 @@ class Agama64Controller extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_agama' => 'required|unique:agamas,nama_agama'
+        ]);
 
         Http::post('http://localhost:8000/api/agama64/', [
             'nama_agama' => $request->nama_agama,
@@ -29,6 +32,10 @@ class Agama64Controller extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nama_agama' => 'required|unique:agamas,nama_agama'
+        ]);
+
         Http::put('http://localhost:8000/api/agama64/' . $id, [
             'nama_agama' => $request->nama_agama
         ]);
