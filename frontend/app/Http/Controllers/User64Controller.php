@@ -13,7 +13,7 @@ class User64Controller extends Controller
         $agama = Http::get('http://localhost:8000/api/agama64')['data'];
         return view('user.myprofile', [
             'agamas' => $agama,
-            'page' => "My profile"
+            'page' => "MY PROFILE"
         ]);
     }
 
@@ -49,7 +49,7 @@ class User64Controller extends Controller
         return view('user.user', [
             'users' => $user,
             'no' => 1,
-            'page' => "List user"
+            'page' => "LIST USER"
         ]);
     }
 
@@ -59,7 +59,7 @@ class User64Controller extends Controller
 
         return view('user.userdetail', [
             'user' => $user,
-            'page' => "Detail user"
+            'page' => "PROFILE USER"
         ]);
     }
 

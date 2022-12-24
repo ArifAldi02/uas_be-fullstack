@@ -23,10 +23,9 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
 
-                <li class="nav-header">Menu</li>
+                <li class="nav-header text-center">Menu</li>
                 <li class="nav-item">
                     <a href="/myprofile64" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             My Profile
                         </p>
@@ -35,7 +34,6 @@
                 @if (Auth::user()->role == 'admin')
                     <li class="nav-item">
                         <a href="/user64" class="nav-link">
-                            <i class="nav-icon fas fa-calendar-alt"></i>
                             <p>
                                 User
                             </p>
@@ -43,7 +41,6 @@
                     </li>
                     <li class="nav-item">
                         <a href="/agama64" class="nav-link">
-                            <i class="nav-icon fas fa-calendar-alt"></i>
                             <p>
                                 Agama
                             </p>
@@ -52,7 +49,6 @@
                 @endif
                 <li class="nav-item">
                     <a href="/logout64" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Logout
                         </p>

@@ -13,7 +13,7 @@ class Agama64Controller extends Controller
         return view('agama.agama', [
             'response' => $response,
             'no' => 1,
-            'page' => "Agama"
+            'page' => "LIST AGAMA"
         ]);
     }
 
