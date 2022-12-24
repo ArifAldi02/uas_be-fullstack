@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Arif Aldini',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('mmmmmmmm'),
+            'role' => 'admin',
+            'is_aktif' => true,
             'foto' => 'modul3_3.jpg'
         ]);
 
