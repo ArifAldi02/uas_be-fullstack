@@ -44,8 +44,8 @@
                         <input type="file" name="foto">
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-outline-info btn-block">Register</button>
-                        <a href="/login64" class="btn btn-outline-dark btn-block">Login</a>
+                        <button type="submit" class="btn btn-outline-info btn-block mb-3">Register</button>
+                        <p>Already have account. <a href="/login64" class="text-bold">Login now!</a></p>
                     </div>
                 </form>
             </div>

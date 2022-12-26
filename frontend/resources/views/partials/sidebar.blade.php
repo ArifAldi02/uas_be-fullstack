@@ -30,6 +30,13 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/" class="nav-link {{ $page === 'Home' ? 'bg-info' : '' }}">
+                        <p>
+                            Home
+                        </p>
+                    </a>
+                </li>
                 @if (Auth::user()->role == 'admin')
                     <li class="nav-item">
                         <a href="/user64"

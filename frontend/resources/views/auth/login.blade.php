@@ -36,8 +36,8 @@
                         <label class="form-label">Passwrod</label>
                         <input type="password" class="form-control" name="password" placeholder="password" required>
                     </div>
-                    <button type="submit" class="btn btn-outline-info btn-block">Login</button>
-                    <a href="/register64" class="btn btn-outline-dark btn-block">Register</a>
+                    <button type="submit" class="btn btn-outline-info btn-block mb-3">Login</button>
+                    <p>Don't have account. <a href="/register64" class="text-bold">Create one!</a></p>
                 </form>
             </div>
         </div>
