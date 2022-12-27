@@ -13,7 +13,9 @@ class User64Controller extends Controller
     public function index()
     {
         $user = User::all()->where('role', '==', 'user');
-        return new Res(true, 'Get success', $user);
+        $users['active'] = $user->where('is_aktif', '==', 1);
+        $users['pending'] = $user->where('is_aktif', '==', 0);
+        return new Res(true, 'Get success', $users);
     }
 
     public function show($id)
