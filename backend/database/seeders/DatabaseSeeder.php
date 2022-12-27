@@ -36,5 +36,8 @@ class DatabaseSeeder extends Seeder
         Agama::factory()->create([
             'nama_agama' => 'Hindu'
         ]);
+        Agama::factory()->create([
+            'nama_agama' => 'Teh Young'
+        ]);
     }
 }
