@@ -40,6 +40,10 @@
                         <input type="password" class="form-control" placeholder="Password" name="password">
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Confirm password" name="confPassword">
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Profile</label>
                         <input type="file" name="foto">
                     </div>

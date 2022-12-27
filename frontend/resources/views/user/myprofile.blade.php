@@ -176,7 +176,11 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">New password</label>
-                            <input type="text" class="form-control" name="password" required>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirm password</label>
+                            <input type="password" class="form-control" name="confPassword" required>
                         </div>
                     </div>
                     <div class="modal-footer bg-dark justify-content-end">
@@ -290,8 +294,7 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Foto ktp</label>
-                                <input type="file" name="foto_ktp" required
-                                    value="{{ Auth::user()->detail_data->foto_ktp }}">
+                                <input type="file" name="foto_ktp" required>
                             </div>
                         </div>
                         <div class="modal-footer bg-dark justify-content-end">

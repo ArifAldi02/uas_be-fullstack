@@ -16,17 +16,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Arif Aldini',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => bcrypt('mmmmmmmm'),
-        //     'role' => 'admin',
-        //     'is_aktif' => true,
-        //     'foto' => 'modul3_3.jpg'
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Arif Aldini',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('mmmmmmmm'),
+            'role' => 'admin',
+            'is_aktif' => true,
+            'foto' => 'modul3_3.jpg'
+        ]);
 
-        \App\Models\User::factory(10)->create();
-
+        \App\Models\User::factory(5)->create();
 
         Agama::factory()->create([
             'nama_agama' => 'Islam'

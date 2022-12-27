@@ -41,11 +41,13 @@ class User64Controller extends Controller
     public function editpassword(Request $request, $id)
     {
         $request->validate([
-            'password' => 'required|min:8'
+            'password' => 'required|min:8',
+            'confPassword' => 'required|same:password'
         ]);
 
         Http::put('http://localhost:8000/api/user64/update/password/' . $id, [
-            'password' => $request->password
+            'password' => $request->password,
+            'confPassword' => $request->confPassword
         ]);
 
         return redirect('/myprofile64')->with('success', 'Change success');

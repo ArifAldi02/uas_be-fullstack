@@ -66,7 +66,8 @@ class User64Controller extends Controller
     public function editpassword(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'password' => 'required'
+            'password' => 'required|min:8',
+            'confPassword' => 'required|same:password'
         ]);
 
         if ($validator->fails()) {
